@@ -16,6 +16,10 @@ resources:
     public-api:
         type: host.containerapp
         port: 8080
+        env:
+            ASPNETCORE_URLS: http://+:8080
     web:
         type: host.containerapp
         port: 8080
+        env:
+            ASPNETCORE_URLS: http://+:8080
