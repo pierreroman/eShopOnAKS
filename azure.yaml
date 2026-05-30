@@ -1,5 +1,4 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
-
 name: e-shop-on-aks
 metadata:
     template: azd-init@1.25.3
@@ -12,14 +11,3 @@ services:
         project: src/Web
         host: containerapp
         language: dotnet
-resources:
-    public-api:
-        type: host.containerapp
-        port: 8080
-        env:
-            ASPNETCORE_URLS: http://+:8080
-    web:
-        type: host.containerapp
-        port: 8080
-        env:
-            ASPNETCORE_URLS: http://+:8080

@@ -1,0 +1,131 @@
+{
+  "id": "/subscriptions/9cba8386-943e-4adf-b359-1d21a0d14857/resourceGroups/rg-sre-agent-demo/providers/Microsoft.App/containerapps/web",
+  "identity": {
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "/subscriptions/9cba8386-943e-4adf-b359-1d21a0d14857/resourcegroups/rg-sre-agent-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-web-67txovpn4glc4": {
+        "clientId": "0dd4f79a-bb5b-4612-9bdc-7611632a2f2d",
+        "principalId": "19e86bf9-5733-439c-a57d-50e1cdec37f3"
+      }
+    }
+  },
+  "location": "East US 2",
+  "name": "web",
+  "properties": {
+    "configuration": {
+      "activeRevisionsMode": "Single",
+      "dapr": null,
+      "identitySettings": [],
+      "ingress": {
+        "additionalPortMappings": null,
+        "allowInsecure": true,
+        "clientCertificateMode": "Ignore",
+        "corsPolicy": null,
+        "customDomains": null,
+        "exposedPort": 0,
+        "external": true,
+        "fqdn": "web.agreeableplant-1c3b4609.eastus2.azurecontainerapps.io",
+        "ipSecurityRestrictions": null,
+        "stickySessions": {
+          "affinity": "none"
+        },
+        "targetPort": 8080,
+        "traffic": [
+          {
+            "label": "label-1",
+            "latestRevision": true,
+            "weight": 100
+          }
+        ],
+        "transport": "Auto"
+      },
+      "maxInactiveRevisions": 0,
+      "registries": [
+        {
+          "identity": "/subscriptions/9cba8386-943e-4adf-b359-1d21a0d14857/resourceGroups/rg-sre-agent-demo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-web-67txovpn4glc4",
+          "passwordSecretRef": "",
+          "server": "cr67txovpn4glc4.azurecr.io",
+          "username": ""
+        }
+      ],
+      "runtime": null,
+      "secrets": null,
+      "service": null
+    },
+    "customDomainVerificationId": "E44F7E5D03A97D9A51396B9C452BF148E46994838BE99464AD2192437B11C9B2",
+    "delegatedIdentities": [],
+    "environmentId": "/subscriptions/9cba8386-943e-4adf-b359-1d21a0d14857/resourceGroups/rg-sre-agent-demo/providers/Microsoft.App/managedEnvironments/cae-67txovpn4glc4",
+    "eventStreamEndpoint": "https://eastus2.azurecontainerapps.dev/subscriptions/9cba8386-943e-4adf-b359-1d21a0d14857/resourceGroups/rg-sre-agent-demo/containerApps/web/eventstream",
+    "latestReadyRevisionName": "web--0000002",
+    "latestRevisionFqdn": "web--0000002.agreeableplant-1c3b4609.eastus2.azurecontainerapps.io",
+    "latestRevisionName": "web--0000002",
+    "managedEnvironmentId": "/subscriptions/9cba8386-943e-4adf-b359-1d21a0d14857/resourceGroups/rg-sre-agent-demo/providers/Microsoft.App/managedEnvironments/cae-67txovpn4glc4",
+    "outboundIpAddresses": [
+      "20.22.136.100"
+    ],
+    "provisioningState": "Succeeded",
+    "runningStatus": "Running",
+    "template": {
+      "containers": [
+        {
+          "env": [
+            {
+              "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+              "value": "InstrumentationKey=5544f106-a7ef-48d4-86e9-ea304f7caa1c;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=a4fd43cf-4438-420e-9f0d-815892fb12c7"
+            },
+            {
+              "name": "AZURE_CLIENT_ID",
+              "value": "0dd4f79a-bb5b-4612-9bdc-7611632a2f2d"
+            },
+            {
+              "name": "PORT",
+              "value": "8080"
+            },
+            {
+              "name": "ASPNETCORE_URLS",
+              "value": "http://+:8080"
+            },
+            {
+              "name": "UseOnlyInMemoryDatabase",
+              "value": "true"
+            }
+          ],
+          "image": "cr67txovpn4glc4.azurecr.io/e-shop-on-aks/web-sre-agent-demo:azd-deploy-1780077733",
+          "name": "main",
+          "resources": {
+            "cpu": 0.5,
+            "ephemeralStorage": "2Gi",
+            "memory": "1Gi"
+          }
+        }
+      ],
+      "initContainers": null,
+      "revisionSuffix": "",
+      "scale": {
+        "cooldownPeriod": 300,
+        "maxReplicas": 10,
+        "minReplicas": 1,
+        "pollingInterval": 30,
+        "rules": null
+      },
+      "serviceBinds": null,
+      "terminationGracePeriodSeconds": null,
+      "volumes": null
+    },
+    "workloadProfileName": null
+  },
+  "resourceGroup": "rg-sre-agent-demo",
+  "systemData": {
+    "createdAt": "2026-05-29T17:46:15.7680327",
+    "createdBy": "pierrer@microsoft.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2026-05-29T19:09:09.2991224",
+    "lastModifiedBy": "pierrer@microsoft.com",
+    "lastModifiedByType": "User"
+  },
+  "tags": {
+    "azd-env-name": "sre-agent-demo",
+    "azd-service-name": "web"
+  },
+  "type": "Microsoft.App/containerApps"
+}
