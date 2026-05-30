@@ -1,0 +1,3 @@
+We're seeing elevated 404 errors coming from the public-api service in eShopOnAKS over the last 15 minutes. The web frontend appears healthy but users may be experiencing issues with API-dependent features. Can you investigate what's causing these errors and identify the root cause?
+
+We've detected an elevated number of 403 errors in the eShopOnAKS application over the last 24 hours. Users may be experiencing access issues. Can you investigate what's causing these authorization failures and identify which part of the application is affected?
