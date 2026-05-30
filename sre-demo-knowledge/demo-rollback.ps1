@@ -39,3 +39,7 @@ try {
 } catch {
   Write-Host "❌ Frontend not responding: $($_.Exception.Message)" -ForegroundColor Red
 }
+
+# Add this line to your existing rollback script
+az webapp config appsettings set --% --name "sre-agent-demo-pierrer" --resource-group "rg-sre-agent-app" --settings "INJECT_ERROR=0"
+Write-Host "✅ INJECT_ERROR reset to 0" -ForegroundColor Green
